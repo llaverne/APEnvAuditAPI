@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Service Environment(s)";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br /><br />
+<h2>Select the Service Environment(s) to work with:</h2>
+
+<!-- DropDownList lstServices here -->
+<!-- https://stackoverflow.com/questions/12985088/binding-dropdownlist-into-mvc-view -->
+<!-- Method 1: Works, but makes Loooong list w/check boxes -->
+<div class="container">
+    <form method="post" action="@Url.Action("ListDataCenters", "DataCenters")">
+        <!-- Action, Controller target of POST -->
+        @*foreach (KeyValuePair<string, object> kvpSelectedServicesAndEnvironments in Model.lstSelectedServicesAndEnvironments)*@
+        @foreach (var objSelectedServicesAndEnvironments in Model.lstSelectedServicesAndEnvironments)
+            {
+            <h4>Environments found for Service <text style="text-transform: uppercase;">@objSelectedServicesAndEnvironments.strServiceName:</text></h4>
+
+            foreach (var objThisServicesEnvironments in objSelectedServicesAndEnvironments.lstEnvironments)
+            {
+                <input type="checkbox"
+                       name="@(objSelectedServicesAndEnvironments.strServiceName + "/" + objThisServicesEnvironments.strEnvironmentName)"
+                       value="@(objSelectedServicesAndEnvironments.strServiceName + "/" + objThisServicesEnvironments.strEnvironmentName)" />
+                    <font style="text-transform: uppercase;">@objThisServicesEnvironments.strEnvironmentName</font>
+                        <br />
+            }
+        }
+        <br />
+        <div class="form-group text-left">
+            <input type="submit" class="btn btn-primary" value="Include selected Environment(s)" />
+        </div>
+    </form>
+</div>

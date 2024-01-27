@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Select which Data Centers to search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Please select which Data Centers you wish to search through:</h2>
+
+<!-- DropDownList lstServices here -->
+<!-- https://stackoverflow.com/questions/12985088/binding-dropdownlist-into-mvc-view -->
+<!-- Method 1: Works, but makes Loooong list w/check boxes -->
+<div class="container">
+    @using (Html.BeginForm("Index", "INIs/ListINIs")) // Action, Controller target of POST
+            {
+                foreach (var item in Model)
+                {
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"
+                           name="@item.ToString()"
+                           value="@item.ToString() " /> @item.ToString()
+                    </label>
+
+
+                </div>
+        }
+        <div class="form-group text-center">
+            <input type="submit" class="btn btn-primary" value="Submit" />
+        </div>
+    }
+</div>

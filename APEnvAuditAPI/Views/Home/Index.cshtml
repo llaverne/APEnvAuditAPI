@@ -1,0 +1,43 @@
+﻿<script src="~/Scripts/jquery-1.12.4.js"></script>
+<div class="jumbotron">
+    <h1>Search Auto Pilot Services</h1>
+    <p class="lead">Use this API to find text located within Auto Pilot .INI files.</p>
+    
+    
+</div>
+<hr size="3" />
+<br />
+<h2>Locate which Service(s) to look through:</h2>
+<br />
+
+<!--
+
+    -->
+
+    <!-- Start Form area:-->
+    <form method="post" action="@Url.Action("Search","Services")">
+        Enter the first few letters of a Service Name:
+        
+        <p></p>
+        <input type="text" name="strSearchTerm" autofocus/>
+        <br />
+        (case insensitive, wildcards not recognized.)
+        <p></p>
+        <div class="form-group text-left">
+            <input id="input" type="submit" class="btn btn-primary" value="Search for Service(s)" />
+        </div>
+        
+    </form>
+    <!-- End of Form area-->
+<br />
+We'll retrieve a list of Services based upon what you enter.<br />
+Then, we'll look through those Service(s) for the data you want.
+<br /><br />
+
+
+<script>
+    $(document).ready(function () {
+        $("#input").focus();
+    });
+</script>
+

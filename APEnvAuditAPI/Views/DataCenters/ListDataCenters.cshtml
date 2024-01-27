@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Select which Data Centers to search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Please select which Data Centers you wish to search through:</h2>
+
+<!-- DropDownList lstServices here -->
+<!-- https://stackoverflow.com/questions/12985088/binding-dropdownlist-into-mvc-view -->
+<!-- Method 1: Works, but makes Loooong list w/check boxes -->
+<div class="container">
+    <form method="post" action="@Url.Action("ListINIs", "INIs")">
+        @{
+        foreach (var objSelectedServicesAndEnvironments in Model.lstSelectedServicesAndEnvironments)
+        {
+        <!--<h4>Data Centers used by <text style="text-transform: uppercase;">@objSelectedServicesAndEnvironments.strServiceName:</text></h4> -->
+        foreach (var objThisServicesEnvironments in objSelectedServicesAndEnvironments.lstEnvironments)
+        {
+        <h4>Data Centers where the <text style="text-transform: uppercase;">@objThisServicesEnvironments.strEnvironmentName</text> instance of <text style="text-transform: uppercase;">@objSelectedServicesAndEnvironments.strServiceName</text> exists:</h4>
+
+        foreach (string strThisServicesEnvironmentsDataCenters in objThisServicesEnvironments.strDataCenterNames)
+        {
+        <input type="checkbox"
+               name="@(objSelectedServicesAndEnvironments.strServiceName + "/" + objThisServicesEnvironments.strEnvironmentName + "/" + strThisServicesEnvironmentsDataCenters)"
+               value="@(objSelectedServicesAndEnvironments.strServiceName + "/" + objThisServicesEnvironments.strEnvironmentName + "/" + strThisServicesEnvironmentsDataCenters)"
+               checked />
+        <font style="text-transform: uppercase;">@strThisServicesEnvironmentsDataCenters</font>
+        <br />
+                    }
+                }
+            }
+            <br />
+            <div class="form-group text-left">
+                <input type="submit" class="btn btn-primary" value="Include selected Data Center(s)" />
+            </div>
+        }
+    </form>
+</div>

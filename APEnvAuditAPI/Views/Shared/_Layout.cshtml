@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Auto Pilot Environment Auditor", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+               
+                <ul class="nav navbar-nav">
+                    <!-- <li>@Html.ActionLink("Help", "Index", "Help", new { area = "" }, null)</li> -->
+                    <li>
+                        <a href="~/Powershell.html" target="_blank">PowerShell API Reference</a>
+                    </li>
+                    <li>
+                        <a href="http://sharepoint/sites/autopilot/wiki/Virtual%20Environments.aspx" target="_blank">VirtualEnvironment.ini info</a>&nbsp;&nbsp;
+                    </li>
+                    <li>
+                        <a href="http://sharepoint/sites/autopilot/wiki/environment.ini.aspx" target="_blank">Environment.ini info</a>&nbsp;&nbsp;
+                    </li>
+                    <li>
+                        <a href="http://sharepoint/sites/autopilot/wiki/Deployment.ini.aspx" target="_blank">Deployment.ini info</a>&nbsp;&nbsp;
+                    </li>
+                    <li>
+                        <a href="http://sharepoint/sites/autopilot/wiki/Allocation.ini.aspx" target="_blank">Allocation.ini info</a>
+                    </li>
+</ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

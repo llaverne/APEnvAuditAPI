@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h2>Powershell Usage:</h2>
+    <br />
+    <h3>Examples of how to access this API:</h3>
+<br />
+
+<textarea style="width:100%;" rows="50">
+Return complete Service Name list as Json: (over 3,000 rows...)
+http://[App URL]/Services/
+
+Get INI File contents as Json:
+http://[App URL]/INIs?strINIFilePath="[full path to INI file]"
+
+Return complete Data Center list as Json:
+http://[App URL]/DataCenters/
+
+Return All Data Centers where a Service & Environment is hosted as Json: (returns full path to each service folder)
+http://[App URL]/DataCenters/GetAServicesDataCenterList?strServiceToLocate=MapsDirections&strEnvironmentToLocate=Prod
+strServiceToLocate = Service Name without Environment and Data Center text (IE: "MapDirections", NOT "MapDirections-dev-bn1")
+strEnvironmentToLocate = "prod", "test", "dev", "ppe", "sandbox", "int" (or any other used in folder structure)
+
+All Services hosted by a Data Center as Json:
+http://[App URL]/DataCenters/GetaDCsServiceList?strDCtoSearch=bn1
+
+List of All INI files for a Service, Data Center, and Environment, as Json: (returns full path to each INI file)
+http://[App URL]/INIs/GetINIListForaServiceDCandEnvironment?strServiceName=CloudSearch&strDCtoSearch=bn1&strEnvironmentTarget=prod
+        
+
+
+Powershell Usage Example: (return a list of all Service Names)
+string objJSON = "";
+using (WebClient webClient = new WebClient()) // "USING" WebClient to destroy object after use.
+{
+    webClient.UseDefaultCredentials = true;
+    objJSON = webClient.DownloadString("http://[APP URL]/Services/");
+}
+lstResults = JsonConvert.DeserializeObject<List<string>>(objJSON); // Convert resultant JSON to List<>
+
+JSON references:
+http://www.newtonsoft.com/json/help/html/SerializingJSON.htm
+</textarea>
+</body>
+</html>

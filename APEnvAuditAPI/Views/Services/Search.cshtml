@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Service Name Search Results";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br />
+<h2>Please select which Services you wish to search through:</h2>
+<!-- DropDownList lstServices here -->
+<!-- https://stackoverflow.com/questions/12985088/binding-dropdownlist-into-mvc-view -->
+<!-- Method 1: Works, but makes Loooong list w/check boxes -->
+<div class="container">
+    @using (Html.BeginForm("Index", "Environments/ListEnvironments")) // Action, Controller target of POST
+            {
+                foreach (var item in Model)
+                {
+            <div class="checkbox">
+                <label style="text-transform: uppercase;">
+                    <input type="checkbox"
+                           name="@item.ToString()"
+                           value="@item.ToString() " /> @item.ToString()
+                    </label>
+
+
+                </div>
+        }
+        <p></p>
+        <div class="form-group text-left">
+            <input type="submit" class="btn btn-primary" value="Use selected Service(s)" />
+        </div>
+    }
+</div>
+

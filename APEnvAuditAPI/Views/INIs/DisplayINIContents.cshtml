@@ -1,0 +1,272 @@
+﻿
+@{
+    ViewBag.Title = "DisplayINIContents";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<h2>VIEW or Edit INI File Contents</h2>
+
+Enter any New Values and press Update... All .INI files for each Service and Environment will be updated.
+<br />
+<br />
+
+<form id="form1" method="post" class="main" action="myservlet">
+
+    <h4>REWARDS - PROD:</h4>
+    <div id="tabs">
+        <ul>
+            <li><a href="#tab1">ENVIRONMENT.INI</a></li>
+            <li><a href="#tab2">DEPLOYMENT.INI</a></li>
+            <li><a href="#tab3">VIRTUALENVIRONMENT.INI</a></li>
+        </ul>
+        <div id="tab1">
+
+            <table width="100%" cellspacing="5">
+                <thead>
+                    <tr>
+                        <th width="20%">Section</th>
+                        <th width="20%">Key</th>
+                        <th width="30%">Current Value</th>
+                        <th width="30%">New Value</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Contact</td>
+                    <td style="border-bottom:1pt solid black;">henryhan</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Property</td>
+                    <td style="border-bottom:1pt solid black;">Search.Autopilot.No</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Group</td>
+                    <td style="border-bottom:1pt solid black;">BingEXp</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">ServiceRollout</td>
+                    <td style="border-bottom:1pt solid black;">DurationInSec</td>
+                    <td style="border-bottom:1pt solid black;">3600</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div id="tab2">
+            <table width="100%" cellspacing="5">
+                <thead>
+                    <tr>
+                        <th width="20%">Section</th>
+                        <th width="20%">Key</th>
+                        <th width="30%">Current Value</th>
+                        <th width="30%">New Value</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Contact</td>
+                    <td style="border-bottom:1pt solid black;">steveoh</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Property</td>
+                    <td style="border-bottom:1pt solid black;">UST.No</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Group</td>
+                    <td style="border-bottom:1pt solid black;">BingSSo</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">ServiceRollout</td>
+                    <td style="border-bottom:1pt solid black;">DurationInSec</td>
+                    <td style="border-bottom:1pt solid black;">3600</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="tab3">
+            <table width="100%" cellspacing="5">
+                <thead>
+                    <tr>
+                        <th width="20%">Section</th>
+                        <th width="20%">Key</th>
+                        <th width="30%">Current Value</th>
+                        <th width="30%">New Value</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Contact</td>
+                    <td style="border-bottom:1pt solid black;">JoBloe</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Property</td>
+                    <td style="border-bottom:1pt solid black;">Whatever</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Group</td>
+                    <td style="border-bottom:1pt solid black;">EXp</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">ServiceRollout</td>
+                    <td style="border-bottom:1pt solid black;">DurationInSec</td>
+                    <td style="border-bottom:1pt solid black;">3600</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br />
+
+    <h4>REWARDS - TEST:</h4>
+    <div id="tabs1">
+        <ul>
+            <li><a href="#tab1">ENVIRONMENT.INI</a></li>
+            <li><a href="#tab2">DEPLOYMENT.INI</a></li>
+            <li><a href="#tab3">VIRTUALENVIRONMENT.INI</a></li>
+        </ul>
+        <div id="tab1">
+
+            <table width="100%" cellspacing="5">
+                <thead>
+                    <tr>
+                        <th width="20%">Section</th>
+                        <th width="20%">Key</th>
+                        <th width="30%">Current Value</th>
+                        <th width="30%">New Value</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Contact</td>
+                    <td style="border-bottom:1pt solid black;">JoBloe</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Property</td>
+                    <td style="border-bottom:1pt solid black;">Whatever</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Group</td>
+                    <td style="border-bottom:1pt solid black;">EXp</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">ServiceRollout</td>
+                    <td style="border-bottom:1pt solid black;">DurationInSec</td>
+                    <td style="border-bottom:1pt solid black;">3600</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div id="tab2">
+            <table width="100%" cellspacing="5">
+                <thead>
+                    <tr>
+                        <th width="20%">Section</th>
+                        <th width="20%">Key</th>
+                        <th width="30%">Current Value</th>
+                        <th width="30%">New Value</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Contact</td>
+                    <td style="border-bottom:1pt solid black;">steveoh</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Property</td>
+                    <td style="border-bottom:1pt solid black;">UST.No</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Group</td>
+                    <td style="border-bottom:1pt solid black;">BingSSo</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">ServiceRollout</td>
+                    <td style="border-bottom:1pt solid black;">DurationInSec</td>
+                    <td style="border-bottom:1pt solid black;">3600</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="tab3">
+            <table width="100%" cellspacing="5">
+                <thead>
+                    <tr>
+                        <th width="20%">Section</th>
+                        <th width="20%">Key</th>
+                        <th width="30%">Current Value</th>
+                        <th width="30%">New Value</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Contact</td>
+                    <td style="border-bottom:1pt solid black;">henryhan</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Property</td>
+                    <td style="border-bottom:1pt solid black;">Search.Autopilot.No</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">General</td>
+                    <td style="border-bottom:1pt solid black;">Group</td>
+                    <td style="border-bottom:1pt solid black;">BingEXp</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1pt solid black;">ServiceRollout</td>
+                    <td style="border-bottom:1pt solid black;">DurationInSec</td>
+                    <td style="border-bottom:1pt solid black;">3600</td>
+                    <td style="border-bottom:1pt solid black;"><input type="text" name="strNewValue"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br />
+    <div class="form-group text-left">
+        <input type="submit" class="btn btn-primary" value="Update INI File(s) with New Value(s)" />
+    </div>
+</form>
+    <script>
+        //$(document).ready(function () {
+        //    alert("document ready occurred!");
+        //});
+
+        $(window).load(function () {
+            //alert("window load occurred!");
+            $("#tabs").tabs();
+            $("#tabs1").tabs();
+        });
+    </script>
